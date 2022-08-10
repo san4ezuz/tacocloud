@@ -1,19 +1,17 @@
 package com.apuzanov.taco.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Entity
+@Document
 @AllArgsConstructor
-@NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
+@NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
 public class Ingredient {
-
     @Id
     private String id;
     private String name;
@@ -22,5 +20,4 @@ public class Ingredient {
     public enum Type {
         WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE
     }
-
 }

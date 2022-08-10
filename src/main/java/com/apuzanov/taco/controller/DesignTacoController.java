@@ -10,6 +10,7 @@ import com.apuzanov.taco.model.Ingredient;
 import com.apuzanov.taco.model.Ingredient.Type;
 import com.apuzanov.taco.model.Taco;
 import com.apuzanov.taco.model.TacoOrder;
+import com.apuzanov.taco.model.TacoUDT;
 import com.apuzanov.taco.repository.IngredientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -70,7 +71,7 @@ public class DesignTacoController {
             return "design";
         }
 
-        tacoOrder.addTaco(taco);
+        tacoOrder.addTaco(new TacoUDT(taco.getName(), taco.getIngredients()));
 
         return "redirect:/orders/current";
     }

@@ -15,6 +15,7 @@ import java.util.Optional;
 import com.apuzanov.taco.controller.DesignTacoController;
 import com.apuzanov.taco.model.Ingredient;
 import com.apuzanov.taco.model.Ingredient.Type;
+import com.apuzanov.taco.model.IngredientUDT;
 import com.apuzanov.taco.model.Taco;
 import com.apuzanov.taco.repository.IngredientRepository;
 import com.apuzanov.taco.repository.OrderRepository;
@@ -72,9 +73,9 @@ public class DesignTacoControllerTest {
 
         design.setIngredients(
                 Arrays.asList(
-                        new Ingredient("FLTO", "Flour Tortilla", Type.WRAP),
-                        new Ingredient("GRBF", "Ground Beef", Type.PROTEIN),
-                        new Ingredient("CHED", "Cheddar", Type.CHEESE)));
+                        new IngredientUDT("Flour Tortilla", Type.WRAP),
+                        new IngredientUDT("Ground Beef", Type.PROTEIN),
+                        new IngredientUDT("Cheddar", Type.CHEESE)));
 
     }
 
